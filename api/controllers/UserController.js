@@ -6,7 +6,7 @@
  */
 
 module.exports = {
-    register = (req, res) => {
+    register : (req, res) => {
         let data = {
             name: req.param('name'),
             username: req.param('username'),
@@ -19,7 +19,7 @@ module.exports = {
             return res.json(user);
         })
     },
-    login = (req, res) => {
+    login : (req, res) => {
         let username = req.param('username')
         let password = req.param('password')
         User.findOne({ username, password }).exec((err, user) => {
